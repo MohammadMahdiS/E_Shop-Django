@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header_reference %}
+    <link rel="stylesheet" href="{% static 'blog/all-posts.css' %}" />
+{% endblock %}
+
+
+{% block title %}
+    <h3> All Posts </h3>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="article container">
+    <div class="article__title fs-3 fw-5 m-2 p-2">
+        <h3> Post Detail </h3>
+    </div>
+    <div class="article__desc mt-4">
+        <h4> {{ post.title | title }} <h4>
+            <strong> {{ post.short_description}} <strong>
+    </div>
+            <div class="article__img w-75 h-75 mt-4">
+                <img src="{% static 'blog/images/'|add:post.image %}" alt="django-image" />
+            </div>
+            <div class="article__text fs-5 fw-6 mt-5">                
+                <article>
+                    {{ post.text }}
+                </article>
+                <div class="article__info fs-4 fw-6 mt-5">
+                    <span> {{post.date|date:'D M Y'}} </span>
+                    <span> {{ post.author }} <span>
+                </div>
+            </div>
+</div>
+
+{% endblock %}

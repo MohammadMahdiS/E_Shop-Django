@@ -1,0 +1,26 @@
+.post__img {
+    width: 5rem;
+   
+}
+
+.post__content {
+    background-color: rgb(88, 87, 150);
+}
+
+
+.post__link {
+    text-decoration-line: none;
+    cursor: pointer;
+    -moz-text-decoration-line: none;
+    background-color: brown;
+}
+
+.blog__box:hover {
+    background-color: aqua;
+    font-size: large;
+    color: red;
+}
+
+a {
+    text-decoration: none;
+}

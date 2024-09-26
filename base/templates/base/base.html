@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_reference %}
+    <link rel="stylesheet" href="{% static 'base/base.css' %}" />
+{% endblock %}
+
+{% block title %}
+ My Shop
+{% endblock %}
+
+
+{% block content %}
+    <header>
+        <h1> <a href="/blog"> Shop Website </a></h1>
+        <nav>
+            <a href=""> All Products </a>
+        </nav>
+    </header>
+
+    <section>
+        <header id="welcome_blog">
+            <img src="" alt="Mohammad Mahdi Soleimani is author of this blog" />
+            <h2> Welcome to Store Page </h2>
+        </header>
+            <p> hi my name is Mohammad Mahdi Soleimani, I develop this application </p>
+    </section>
+    <section id="latest_posts">
+        <h2> Latest Products </h2>
+        <ul>
+            <article class="product"> <li> <a href="" > <img src="" alt="Learning Django" /> <div class="product__content"> <h3> Learning Django </h3> <p> Learning Django Step-by-Step</p> </a> </li> </article>
+            <article class="product"> <li> <a href="" > <img src="" alt="" /> <div> <h3> </h3> <p> </p> </a> </li> </article>
+            <article class="product"> <li> <a href="" > <img src="" alt="" /> <div> <h3> </h3> <p> </p> </a> </li> </article>
+            <article class="product"> <li> <a href="" > <img src="" alt="" /> <div> <h3> </h3> <p> </p> </a> </li> </article>
+        </ul>
+    </section>
+
+    
+
+{% endblock %}

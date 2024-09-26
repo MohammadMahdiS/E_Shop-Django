@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_reference %}
+    <link rel="stylesheet" href="{% static 'challenges/challenges.css' %}" />
+{% endblock %}
+
+{% block title %}
+ My Blogs
+{% endblock %}
+
+
+{% block content %}
+    <header>
+        <h1> <a href="/blog"> Blogs </a></h1>
+        <nav>
+            <a href=""> All Posts </a>
+        </nav>
+    </header>
+
+    <section>
+        <header id="welcome_blog">
+            <img src="" alt="Mohammad Mahdi Soleimani is author of this blog" />
+            <h2> Welcome to Blogs Page </h2>
+        </header>
+            <p> hi my name is Mohammad Mahdi Soleimani, I develop this application </p>
+    </section>
+    <section id="latest_posts">
+        <h2> Latest Posts </h2>
+        <ul>
+            <article class="post bg-ingo"> <li> <a href="" > <img src="" alt="Learning Django" /> <div class="post__content"> <h3> Learning Django </h3> <p> Learning Django Step-by-Step</p> </a> </li> </article>
+            <article class="post"> <li> <a href="" > <img src="" alt="" /> <div> <h3> </h3> <p> </p> </a> </li> </article>
+            <article class="post"> <li> <a href="" > <img src="" alt="" /> <div> <h3> </h3> <p> </p> </a> </li> </article>
+            <article class="post"> <li> <a href="" > <img src="" alt="" /> <div> <h3> </h3> <p> </p> </a> </li> </article>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h3> Who I am ? </h3>
+        <p> I programming an application </p>
+    </section>
+
+{% endblock %}

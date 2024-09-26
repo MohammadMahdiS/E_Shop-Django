@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="blog__box col-4">
+    <a href="{% url 'post-detail-page' slug=post.slug %}" class=" text-dark icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;">
+    <img class="w-50 h-50" src="{% static 'blog/images/'|add:post.image %}" alt={{post.title}} />
+    <div>
+        <h5>
+                {{ post.title }}
+        </h5>
+            <p>
+                    {{ post.short_description }}
+            </p>
+        </a>
+    </div>
+   
+</div> 

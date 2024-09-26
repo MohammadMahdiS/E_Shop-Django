@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_reference %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
+{% endblock %}
+
+{% block title %}
+ My Blogs
+{% endblock %}
+
+
+{% block content %}
+   
+    <section>
+        <header id="welcome_blog">
+            <img src="" alt="Mohammad Mahdi Soleimani is author of this blog" />
+            <h2> Welcome to Blogs Page </h2>
+        </header>
+            <p> hi my name is Mohammad Mahdi Soleimani, I develop this application </p>
+    </section>
+    <section class="container" id="latest_posts">
+        <h2> Latest Posts </h2>
+       
+        <div class="row">
+           
+    {% for post in latest_posts %}
+    {{ post.title }}
+    {% include 'blog/includes/post.html' %}
+    {% endfor %}
+                    
+                  
+        </div>
+    </section>
+   
+
+    <section id="about">
+        <h3> Who am I ? </h3>
+        <p> I programming an application </p>
+    </section>
+
+{% endblock %}
