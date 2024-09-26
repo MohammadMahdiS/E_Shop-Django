@@ -1,23 +1,23 @@
-# from django.db import models
-# from django.contrib.auth import User
+from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# class CustomUser(models.Model):
-#     first_name = models.CharField(max_length=255, blank=True)
-#     last_name = models.CharField(max_length=255, blank=True)
-#     email = models.EmailField(blank=True)
-#     password = models.CharField(max_length=255)
-#     is_staff = models.BooleanField(default=True)
-#     is_active = models.BooleanField(default=True)
-#     is_superuser = models.BooleanField(default=True)
-#     last_login = models.DateField(blank=True)
-#     is_authenticated = models.BooleanField(default=True)
+# from django.contrib.auth import get_user_model                # get a instance model from User model in django.contrib.auth
+# User = get_user_model()
 
+# AbstractUser  its have many field whene we want to create a model and add custom field      
+# AbstractBaseUser its did not any fields similar to AbstractUser and we should define all fields we need
 
-# class CustomUserManager(models.Model):
-#     def create_user(username, email=None, password=None, **extra_fields):
-#         user = User.get_object()
-#         return user
+# after create model please tell django project in settings file AUTH_USER_MODEL = 'users.CustomUser'
+class CustomUser(AbstractUser):
+    phone = models.CharField(max_length=20, verbose_name="تلفن همراه")
+    email_active_code = models.CharField(max_length=100, verbose_name="کد فعال سازی ایمیل")
+
+    # show CustomUser models name in django admin panel
+    class Meta:
+        verbose_name = 'کاربر'
+        verbose_name_plural = 'کاربران'
+
+    def __str__(self):
+        return self.get_full_name()
     
-#     def create_superuser(username, email=None, password=None, **extra_fields):
-#         superuser = User.get_queryset()
-#         return superuser
+
