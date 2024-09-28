@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_reference %}
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+<h3> Product List </h3>
+<div class="row">
+{% for product in products %}
+    {% include 'products/includes/product.html' %}
+{% endfor %}
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_reference %}
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+<h3> Product Detail </h3>
+<div class="row d-felx flex-column product_detail">
+
+    <div class="product_detail__img col-4">
+        <img src="{% static 'products/images/phone.jpg' %}"  class="w-75 h-75 "/>
+    </div>
+    <div class="product_detail__info col-8">
+        <div class="product_detail__info-title">
+            {{ product.title }}
+        </div>
+        <div class="product_detail__info-rating d-flex flex-row mt-2 my-3">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-alt"></i>
+            <span class="ms-1 mt-1"> 
+            {{ product.rating }}
+            </span>
+        </div>
+        <span class="text-muted">
+            <i class="fas fa-shopping-basket fa-sm mx-1"></i>
+            154 order
+        </span>
+        <span class="text-success ms-2"> In Stock </span>
+    </div>
+
+    <div class="product_detail__info-price">
+        <span class="h5"> {{ product.price }} </span>
+    </div>
+
+    <div class="product_detail__info-description">
+        <p>
+            {{ product.short_description }}
+        </p>
+    </div>
+
+    <div class="product_detail__plus row">
+        <dt class="col-3">Type: </dt>
+        <dd class="col-9">Regular </dt>
+            
+        <dt class="col-3">Color: </dt>
+        <dd class="col-9">Brown </dt>
+
+        <dt class="col-3">Material: </dt>
+        <dd class="col-9">Cotton, Jeans </dt>
+
+        <dt class="col-3">Brand: </dt>
+        <dd class="col-9">Reebok </dt>
+    </div>
+
+    <hr/>
+
+    <div class="product_detail__type-quantity row">
+        <div class="col-md-4 col-6">
+            <label class="mb-2"> Size </label>
+            <select class="form-select border border-secondary" style="height: 35px;">
+                <option> Small </option>
+                <option> Medium </option>
+                <option> Large </option>
+            </select>
+        </div>
+        <div class="col-md-4 col-6 mb-3">
+            <label class="mb-2 d-block"> Quantity </label>
+            <div class="input-qroup mb-3" style="width: 170px;">
+                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mbd-ripple-color="dark">
+                    <i class="fas fa-minus">
+                </button>
+                <input type="text" class="form-control text-center border border-secondary" placeholder="14" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mbd-ripple-color="dark">
+                    <i class="fas fa-plus">
+                </button>
+            </div>
+        </div>
+        <a href="#" class="btn btn-warning shadow-0"> Buy now </a>
+        <a href="#" class="btn btn-primary shadow-0"> 
+            <i class="me-1 fa fa-shopping-basket"></i>
+            Add to cart
+        </a>
+        <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> 
+            <i class="me-1 fa fa-heart fa-lg"></i>
+            Save
+        </a>
+    </div>    
+
+</div>
+
+{% endblock %}
+

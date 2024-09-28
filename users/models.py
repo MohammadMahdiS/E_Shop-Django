@@ -18,6 +18,6 @@ class CustomUser(AbstractUser):
         verbose_name_plural = 'کاربران'
 
     def __str__(self):
-        return self.get_full_name()
+        return f"{self.get_full_name()} {self.username}" 
     
 

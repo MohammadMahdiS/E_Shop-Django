@@ -1,5 +1,7 @@
 from django.urls import path
+from .views import users_list
 
 urlpatterns = [
-    path('', )
+    path('', users_list, name="users-list-page"),
+    
 ]

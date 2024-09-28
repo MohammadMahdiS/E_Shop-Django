@@ -1,0 +1,29 @@
+{% load static %}
+
+<div class="product__box col-4">
+    {% comment %} <a href="{% url 'product-detail-page' slug=post.slug %}" class=" text-dark icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;"> {% endcomment %}
+    {% comment %} <img class="w-50 h-50" src="{% static 'products/images/'|add:post.image %}" alt={{post.title}} /> {% endcomment %}
+    
+    {% comment %} Product detail page by id {% endcomment %}
+    <a href="{% url 'product-detail-page' product_id=product.id %}">
+    <div class="card m-2" style="width: 18rem;">
+        <img class="card-img-top mt-2" src="..." alt="Card image cap">
+        <div class="card-body mt-2">
+          <h5 class="card-title"> {{ product.title }} </h5>
+          <p class="card-text"> {{ product.short_description }}</p>
+          <div class="d-flex mt-2">
+            <span>Price: {{ product.price }} $</span>
+          </div> 
+        <div class="d-flex mt-2">
+            <span>Rating: {{ product.rating }} </span>
+        </div>
+        <hr/>
+        <div>
+          <span> total_number_of_products: {{ total_number_of_products }}  </span>
+          <span> average_ratings: {{ average_ratings.rating__avg }}   </span>
+        </div>
+          <a href="#" class="btn btn-primary w-50 mt-4">Buy</a>
+        </div>
+      </div>
+   
+</div> 
