@@ -3,6 +3,15 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.text import slugify
 from django.urls import reverse
 
+class ProductTag(models.Model):
+    tag_name = models.CharField(max_length=255, verbose_name='تگ')
+
+    def __str__(self):
+        return self.tag
+    
+    class Meta:
+        verbose_name = 'تگ'
+        verbose_name_plural = 'تگ ها'
 
 class ProductCategory(models.Model):
     title = models.CharField(max_length=255, verbose_name="عنوان")
@@ -29,13 +38,14 @@ class ProductInformation(models.Model):
 # in DDB when we have many tables, the relation field must be in main model that other models depeneded on it
 class Product(models.Model):
     title = models.CharField(max_length=255)
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, null=True, related_name="products", verbose_name='دسته بندی')
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, null=True, related_name="product_category", verbose_name='دسته بندی')
     information = models.OneToOneField(
         'ProductInformation',
          on_delete=models.CASCADE,
          related_name='product_information',
          verbose_name='اطلاعات تکمیلی',
          null=True)
+    tag = models.ManyToManyField(ProductTag, related_name='product_tag', verbose_name='تگ')
     price = models.DecimalField(max_digits=5, decimal_places=2)
     rating = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)], default=0
